@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b18">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='8' fill='%2362f5e5'/%3E%3Cellipse cx='32' cy='32' rx='26' ry='11' fill='none' stroke='%2362f5e5' stroke-width='2' transform='rotate(-25 32 32)'/%3E%3C/svg%3E">
+  <title>Neon Orbit — Breakout in deep space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Neon Orbit home"><span class="brand-mark">◉</span><span>NEON<span class="brand-light">ORBIT</span></span></a>
+      <div class="edition">ARCADE <span>·</span> 001</div>
+      <button class="icon-button sound-toggle" id="soundBtn" aria-label="Toggle sound" title="Toggle sound"><span id="soundIcon">♫</span></button>
+    </header>
+
+    <section class="game-layout" aria-label="Neon Orbit game">
+      <div class="game-column">
+        <div class="hud">
+          <div class="hud-stat"><span class="hud-label">SCORE</span><strong id="score">000000</strong></div>
+          <div class="hud-center"><span class="level-pip"></span><span id="level">SECTOR 01</span></div>
+          <div class="hud-stat hud-right"><span class="hud-label">LIVES</span><strong id="lives" class="lives">● ● ●</strong></div>
+        </div>
+        <div class="board-wrap" id="boardWrap">
+          <canvas id="game" width="960" height="600" aria-label="Breakout game board"></canvas>
+          <div class="screen" id="screen">
+            <div class="screen-content" id="screenContent">
+              <div class="orbit-icon"><span class="planet"></span><span class="ring ring-one"></span><span class="ring ring-two"></span></div>
+              <p class="eyebrow" id="screenEyebrow">A COSMIC ARCADE CLASSIC</p>
+              <h1 id="screenTitle">NEON<br><em>ORBIT</em></h1>
+              <p class="screen-copy" id="screenCopy">Break through the grid. Catch the light.<br>How far can you go?</p>
+              <button class="primary-button" id="playBtn"><span id="playText">LAUNCH GAME</span><span class="button-arrow">↗</span></button>
+              <p class="screen-hint" id="screenHint">PRESS <kbd>SPACE</kbd> OR TAP TO LAUNCH</p>
+            </div>
+          </div>
+          <div class="pause-badge" id="pauseBadge" hidden>PAUSED <span>·</span> PRESS P TO RESUME</div>
+        </div>
+        <div class="board-footer"><span><i class="status-dot"></i><span id="statusText">SYSTEM READY</span></span><span class="footer-tip">CLEAR EVERY BRICK TO ADVANCE <b>↗</b></span></div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="panel-block objective">
+          <span class="panel-kicker">YOUR OBJECTIVE</span>
+          <h2>One paddle.<br><span>Infinite space.</span></h2>
+          <p>Keep the energy orb in play and shatter every block in the sector.</p>
+        </div>
+        <div class="panel-divider"></div>
+        <div class="panel-block controls">
+          <span class="panel-kicker">FLIGHT CONTROLS</span>
+          <div class="control-row"><span>MOVE PADDLE</span><span class="keys"><kbd>←</kbd><kbd>→</kbd><small>OR</small><kbd>A</kbd><kbd>D</kbd></span></div>
+          <div class="control-row"><span>LAUNCH / RESUME</span><span class="keys"><kbd>SPACE</kbd></span></div>
+          <div class="control-row"><span>PAUSE</span><span class="keys"><kbd>P</kbd></span></div>
+          <p class="touch-note">Touchscreen? Drag anywhere on the board.</p>
+        </div>
+        <div class="panel-divider"></div>
+        <div class="panel-block powerups">
+          <span class="panel-kicker">ORBITAL ANOMALIES</span>
+          <div class="power-row"><span class="power-icon wide-icon">↔</span><span><b>WIDE BEAM</b><small>Catch falling cyan energy</small></span></div>
+          <div class="power-row"><span class="power-icon slow-icon">◷</span><span><b>SLOW FIELD</b><small>Buy yourself a moment</small></span></div>
+        </div>
+        <div class="best-score"><span>PERSONAL BEST</span><strong id="bestScore">000000</strong></div>
+      </aside>
+    </section>
+    <footer class="page-footer"><span>BUILT FOR THE LONG WAY HOME.</span><span>© 2086 <b>·</b> ORBITAL ARCADE CO.</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
